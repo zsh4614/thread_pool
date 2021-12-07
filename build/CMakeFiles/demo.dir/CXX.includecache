@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/sti/work/pre_develop/thread_pool/demo.cpp
+thread_pool.h
+/home/sti/work/pre_develop/thread_pool/thread_pool.h
+iostream
+-
+chrono
+-
+
+/home/sti/work/pre_develop/thread_pool/thread_pool.h
+vector
+-
+queue
+-
+thread
+-
+atomic
+-
+future
+-
+functional
+-
+
