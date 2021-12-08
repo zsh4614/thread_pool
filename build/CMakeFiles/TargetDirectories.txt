@@ -1,3 +1,0 @@
-/home/sti/work/pre_develop/thread_pool/build/CMakeFiles/rebuild_cache.dir
-/home/sti/work/pre_develop/thread_pool/build/CMakeFiles/edit_cache.dir
-/home/sti/work/pre_develop/thread_pool/build/CMakeFiles/demo.dir
