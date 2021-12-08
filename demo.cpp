@@ -5,15 +5,17 @@
 std::mutex g_mutex;
 
 void task(int i) {
-    std::cout << "正在执行第 " << i << " 个任务" << std::endl;
-    std::this_thread::sleep_for(std::chrono::milliseconds(10000));
-    std::cout << "执行完成第 " << i << " 个任务" << std::endl;
+    printf("正在执行第 %d 个任务， 线程id为 %d\n", i, std::this_thread::get_id());
+    std::this_thread::sleep_for(std::chrono::milliseconds(2000));
+    printf("执行完成第 %d 个任务， 线程id为 %d\n", i, std::this_thread::get_id());
 }
 
 int main(int argc, char** argv) {
-    // todo:
-    ThreadPool::Ptr thread_pool_ptr = std::make_shared<ThreadPool>(1);
-    for (int i = 0; i < 1; ++i) {
-        thread_pool_ptr->commit([i](){ task(i); });
+    std::cout << "主线程id为 " << std::this_thread::get_id() << std::endl;
+    ThreadPool::Ptr thread_pool_ptr = std::make_shared<ThreadPool>(3);
+    for (int i = 0; i < 3; ++i) {
+        thread_pool_ptr->commit([i](){task(i);});
     }
+
+    std::this_thread::sleep_for(std::chrono::milliseconds(10000));
 }
